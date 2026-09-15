@@ -31,7 +31,15 @@ Lumos was created by <a target="_blank" href="http://narechania.com">Arpit Narec
 }
 ```
 
-## Deploy on Heroku
+## Deploy on Render
+- Build `app` repository code from inside that repository: `ng build`
+    - This should add/update contents inside the `server/public` folder.
+- Add, commit code via git.
+- Push to main branch.
+- Set PYTHON_VERSION=3.10.21 as Environment Variable in Render
+- Try `https://lumos-1stu.onrender.com` in browser (there may be a 30s wait time because we are using the Free tier, and hence, the server can be idle)
+ 
+## Deploy on Heroku (now Sunset as it was expensive to maintain)
 - Build `app` repository code from inside that repository: `ng build`
     - This should add/update contents inside the `server/public` folder.
 - Verify `Procfile` inside the `server` folder.
