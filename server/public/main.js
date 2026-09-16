@@ -1826,7 +1826,8 @@ var SessionPage = /** @class */ (function () {
 }());
 
 var DeploymentConfig = Object.freeze({
-    SERVER_URL: "https://lumos-webapp-4aeadb3bf30d.herokuapp.com/"
+	SERVER_URL: "https://lumos-1stu.onrender.com/"
+    // SERVER_URL: "https://lumos-webapp-4aeadb3bf30d.herokuapp.com/"
     // SERVER_URL: "http://localhost:3000"
 });
 /**
