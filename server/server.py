@@ -41,12 +41,11 @@ async def handle_ui_files(request):
     public_dir = os.path.join(os.path.dirname(__file__), 'public')
 
     # Serve the file from the public directory
-    file_path = os.path.join(public_dir, fname)
-
-    try:
-        return web.FileResponse(file_path)
-    except FileNotFoundError:
+    file_path = os.path.normpath(os.path.join(public_dir, fname))
+    if not file_path.startswith(public_dir) or not os.path.isfile(file_path):
         raise web.HTTPNotFound()
+
+    return web.FileResponse(file_path)
 
 # Static file serving
 APP.router.add_static('/static/', path=str(os.path.join(os.path.dirname(__file__), 'public')), name='static')
